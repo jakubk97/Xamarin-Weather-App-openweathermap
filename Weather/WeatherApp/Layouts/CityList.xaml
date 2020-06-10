@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WeatherApp.CityList">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="searchBarStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="Gray" />
+            </Style>
+
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style x:Key="stackLayout" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+
+            <Style x:Key="stackLayoutLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Margin" Value="10,0,0,0" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout BackgroundColor="#545454">
+        <Button ContentLayout="Left,5" Text="Search new city" HorizontalOptions="FillAndExpand" Clicked="OnSearchButtonClicked" BackgroundColor="White" BorderColor="Black" BorderWidth="1" BorderRadius="15"  />
+
+        <ListView x:Name="listOfCities">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <!--<Grid>
+                            <Label Text="{Binding Title}" Style="{StaticResource labelStyle}" />
+                        </Grid>-->
+                        <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="0" Style="{StaticResource stackLayout}">
+                            <Label Text="{Binding Title}" VerticalOptions="Center" Style="{StaticResource stackLayoutLabel}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

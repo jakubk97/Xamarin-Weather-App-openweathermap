@@ -1,0 +1,15 @@
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\bin\Debug\netstandard2.0\WeatherApp.deps.json
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\bin\Debug\netstandard2.0\WeatherApp.dll
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\bin\Debug\netstandard2.0\WeatherApp.pdb
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\obj\Debug\netstandard2.0\WeatherApp.csprojAssemblyReference.cache
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\obj\Debug\netstandard2.0\WeatherApp.AssemblyInfoInputs.cache
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\obj\Debug\netstandard2.0\WeatherApp.AssemblyInfo.cs
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\obj\Debug\netstandard2.0\WeatherApp.dll
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\obj\Debug\netstandard2.0\WeatherApp.pdb
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\obj\Debug\netstandard2.0\WeatherApp.csproj.CoreCompileInputs.cache
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\obj\Debug\netstandard2.0\Layouts\CityList.xaml.g.cs
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\obj\Debug\netstandard2.0\Layouts\Details.xaml.g.cs
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\obj\Debug\netstandard2.0\Layouts\MainPage.xaml.g.cs
+C:\Users\Kuba\Desktop\Xamarin_Forms___Weather_App\Weather\WeatherApp\obj\Debug\netstandard2.0\Layouts\Search.xaml.g.cs

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:WeatherApp" 
+             x:Class="WeatherApp.MainPage"
+             NavigationPage.HasNavigationBar="False" >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="labelResultStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Margin" Value="10,0,0,0" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="labelResultStyleBig" TargetType="Label">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Margin" Value="10,0,0,0" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="searchButton" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+            </Style>
+
+            <Style x:Key="stackLayout" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+
+            <Style x:Key="stackLayoutLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Margin" Value="10,0,0,0" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <local:LongToDateTimeConverter x:Key="longToDateTimeConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout BackgroundColor="#545454">
+
+       
+        <ImageButton Source="https://img.icons8.com/search" Margin="6,6,6,6" HorizontalOptions="Start" Clicked="OnSearchButtonClicked" HeightRequest="40" WidthRequest="40" BackgroundColor="Transparent"/>
+
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Grid>
+
+                    <Label Text="{Binding City.Name}" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="Center" Margin="0,0,10,0" VerticalTextAlignment="End" Style="{StaticResource labelStyle}" TextColor="#C0C0C0" FontSize="Large" FontAttributes="Bold" />
+
+                </Grid>
+                <StackLayout Padding="10">
+                    <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
+                        <Label Text="{Binding List[0].Main.Temp}" Style="{StaticResource labelResultStyleBig}" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
+                        <Label Text="" Style="{StaticResource labelStyle}" />
+                        <Label Text="{Binding List[0].Weather[0].Description}" Style="{StaticResource labelResultStyle}" />
+                    </StackLayout>
+
+                    <Image x:Name="weatherImage" HeightRequest="100" />
+
+                </StackLayout>
+
+                <Button Text="More details" HorizontalOptions="End" BackgroundColor="White" BorderColor="Black" BorderWidth="1" BorderRadius="15" VerticalOptions="Center" Clicked="OnDetailsButtonClicked" />
+
+                <StackLayout Padding="10" VerticalOptions="EndAndExpand">
+                    <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="0" Style="{StaticResource stackLayout}">
+                        <Label x:Name="Day_0" Style="{StaticResource stackLayoutLabel}" />
+                        <Label Text="{Binding List[1].Weather[0].Description}" Style="{StaticResource stackLayoutLabel}" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="0" Style="{StaticResource stackLayout}">
+                        <Label x:Name="Day_1" Style="{StaticResource stackLayoutLabel}" />
+                        <Label Text="{Binding List[2].Weather[0].Description}" Style="{StaticResource stackLayoutLabel}" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="0" Style="{StaticResource stackLayout}">
+                        <Label x:Name="Day_2" Style="{StaticResource stackLayoutLabel}" />
+                        <Label Text="{Binding List[3].Weather[0].Description}" Style="{StaticResource stackLayoutLabel}" />
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

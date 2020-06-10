@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WeatherApp" x:Class="WeatherApp.Details" Title="Weather details">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="labelResultStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="Margin" Value="10,0,0,0" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="labelResultStyleBig" TargetType="Label">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="Margin" Value="10,0,0,0" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+            <local:LongToDateTimeConverter x:Key="longToDateTimeConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout BackgroundColor="#545454">
+        <Grid>
+
+            <Label Text="{Binding Title}" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="Center" Margin="0,0,10,0" VerticalTextAlignment="End" Style="{StaticResource labelStyle}" TextColor="#C0C0C0" FontSize="Large" FontAttributes="Bold" />
+
+        </Grid>
+
+        <StackLayout Padding="10">
+            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
+                <Label Text="{Binding Main.Temperature}" Style="{StaticResource labelResultStyleBig}" />
+            </StackLayout>
+            
+            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
+                <Label Text="" Style="{StaticResource labelStyle}" />
+                <Label Text="{Binding Weather[0].Description}" Style="{StaticResource labelResultStyle}" />
+            </StackLayout>
+
+            <Image x:Name="weatherImage" HeightRequest="100" />
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
+                <Label Text="Pressure:" Style="{StaticResource labelStyle}" />
+                <Label Text="{Binding Main.Pressure}" Style="{StaticResource labelResultStyle}" />
+            </StackLayout>
+            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
+                <Label Text="Humidity:" Style="{StaticResource labelStyle}" />
+                <Label Text="{Binding Main.Humidity}" Style="{StaticResource labelResultStyle}" />
+            </StackLayout>
+            <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="10,10,10,10" HorizontalOptions="Center" Spacing="0">
+                <Label Text="Sunrise:" Style="{StaticResource labelStyle}" />
+                <Label Text="{Binding Sys.Sunrise, Converter={StaticResource longToDateTimeConverter}}" Style="{StaticResource labelResultStyle}" />
+            </StackLayout>
+            <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
+                <Label Text="Sunset:" Style="{StaticResource labelStyle}" />
+                <Label Text="{Binding Sys.Sunset, Converter={StaticResource longToDateTimeConverter}}" Style="{StaticResource labelResultStyle}" />
+            </StackLayout>
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
